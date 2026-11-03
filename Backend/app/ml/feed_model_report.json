@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-11-02T18:43:15",
+  "best_model": "random_forest",
+  "selection_method": "Lowest time-based holdout MAPE; lowest MAE used as tie-breaker.",
+  "features": [
+    "doc",
+    "avg_weight_g",
+    "biomass_kg",
+    "temperature_c",
+    "dissolved_oxygen",
+    "previous_feed_kg"
+  ],
+  "target": "feed_quantity_kg",
+  "data": {
+    "rows": 3000,
+    "ponds": 30,
+    "date_from": "2026-01-02",
+    "date_to": "2026-05-01",
+    "doc_min": 1,
+    "doc_max": 100,
+    "feed_kg_min": 4.92,
+    "feed_kg_mean": 45.42,
+    "feed_kg_max": 99.7,
+    "missing_values": {
+      "doc": 0,
+      "avg_weight_g": 270,
+      "biomass_kg": 270,
+      "temperature_c": 0,
+      "dissolved_oxygen": 0,
+      "previous_feed_kg": 30
+    }
+  },
+  "split": {
+    "method": "Time-based: train on earlier dates, test on the latest dates.",
+    "cutoff_date": "2026-04-01",
+    "train_rows": 2413,
+    "test_rows": 587,
+    "test_doc_range": [
+      71,
+      100
+    ]
+  },
+  "models": {
+    "random_forest": {
+      "holdout_metrics": {
+        "rows": 587,
+        "mae_kg": 5.467,
+        "mape_pct": 7.06,
+        "bias_kg": -1.709
+      },
+      "horizon_backtest": [
+        {
+          "day": 1,
+          "start_days_tested": 377,
+          "mae_kg": 5.008,
+          "mape_pct": 6.8,
+          "bias_kg": -0.704
+        },
+        {
+          "day": 2,
+          "start_days_tested": 377,
+          "mae_kg": 5.158,
+          "mape_pct": 6.85,
+          "bias_kg": -1.382
+        },
+        {
+          "day": 3,
+          "start_days_tested": 377,
+          "mae_kg": 5.303,
+          "mape_pct": 6.95,
+          "bias_kg": -1.809
+        },
+        {
+          "day": 4,
+          "start_days_tested": 377,
+          "mae_kg": 5.382,
+          "mape_pct": 6.91,
+          "bias_kg": -2.385
+        },
+        {
+          "day": 5,
+          "start_days_tested": 377,
+          "mae_kg": 5.654,
+          "mape_pct": 7.16,
+          "bias_kg": -2.84
+        },
+        {
+          "day": 6,
+          "start_days_tested": 377,
+          "mae_kg": 5.846,
+          "mape_pct": 7.29,
+          "bias_kg": -3.257
+        },
+        {
+          "day": 7,
+          "start_days_tested": 377,
+          "mae_kg": 6.283,
+          "mape_pct": 7.73,
+          "bias_kg": -3.834
+        }
+      ],
+      "reliable_days_within_10pct": 7
+    },
+    "xgboost": {
+      "holdout_metrics": {
+        "rows": 587,
+        "mae_kg": 5.893,
+        "mape_pct": 7.57,
+        "bias_kg": -2.013
+      },
+      "horizon_backtest": [
+        {
+          "day": 1,
+          "start_days_tested": 377,
+          "mae_kg": 5.118,
+          "mape_pct": 6.92,
+          "bias_kg": -0.869
+        },
+        {
+          "day": 2,
+          "start_days_tested": 377,
+          "mae_kg": 5.434,
+          "mape_pct": 7.21,
+          "bias_kg": -1.498
+        },
+        {
+          "day": 3,
+          "start_days_tested": 377,
+          "mae_kg": 5.6,
+          "mape_pct": 7.34,
+          "bias_kg": -1.978
+        },
+        {
+          "day": 4,
+          "start_days_tested": 377,
+          "mae_kg": 5.833,
+          "mape_pct": 7.49,
+          "bias_kg": -2.574
+        },
+        {
+          "day": 5,
+          "start_days_tested": 377,
+          "mae_kg": 5.96,
+          "mape_pct": 7.53,
+          "bias_kg": -3.083
+        },
+        {
+          "day": 6,
+          "start_days_tested": 377,
+          "mae_kg": 6.274,
+          "mape_pct": 7.8,
+          "bias_kg": -3.537
+        },
+        {
+          "day": 7,
+          "start_days_tested": 377,
+          "mae_kg": 6.672,
+          "mape_pct": 8.2,
+          "bias_kg": -4.166
+        }
+      ],
+      "reliable_days_within_10pct": 7
+    }
+  },
+  "plain_summary": "random_forest was selected based on the lowest time-based holdout MAPE of 7.06% and MAE of 5.467 kg."
+}

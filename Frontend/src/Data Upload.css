@@ -1,0 +1,264 @@
+.upload-shell {
+  min-height: 100%;
+  background: #f4f6fa;
+  color: #14352b;
+}
+
+.upload-body {
+  padding: 20px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* White cards */
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 22px;
+  background: white;
+  border: 1px solid #e6ebf0;
+  border-radius: 14px;
+}
+
+.upload-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.upload-card-head h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.upload-hint {
+  font-size: 11px;
+  color: #7a8a99;
+}
+
+.upload-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 420px;
+}
+
+.upload-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4a5b6a;
+}
+
+.upload-field select {
+  padding: 11px 12px;
+  border: 1px solid #dfe5ea;
+  border-radius: 8px;
+  background: white;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Dropzone */
+.upload-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 34px 16px;
+  text-align: center;
+  border: 2px dashed #c9d6df;
+  border-radius: 12px;
+  background: #f9fbfd;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.upload-dropzone span {
+  color: #7a8a99;
+  font-size: 12px;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.dragging {
+  background: #eef6f2;
+  border-color: #1f6b4a;
+}
+
+/* Dark summary card */
+.upload-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 28px;
+  background: #101c33;
+  color: white;
+  border-radius: 18px;
+}
+
+.upload-hero-main {
+  min-width: 0;
+}
+
+.upload-hero-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #8fa3c4;
+}
+
+.upload-hero h2 {
+  margin: 8px 0 6px;
+  font-size: 26px;
+  overflow-wrap: anywhere;
+}
+
+.upload-hero p {
+  margin: 0;
+  font-size: 13px;
+  color: #c9d6ea;
+}
+
+.upload-hero-stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.upload-hero-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.upload-hero-stats span {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #8fa3c4;
+}
+
+.upload-hero-stats strong {
+  font-size: 13px;
+}
+
+.upload-status.ready,
+.upload-status.uploaded {
+  color: #7be0a8;
+}
+
+.upload-status.uploading {
+  color: #ffd27a;
+}
+
+.upload-status.failed {
+  color: #ff9a92;
+}
+
+/* Buttons */
+.upload-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.upload-submit {
+  padding: 11px 22px;
+  color: white;
+  background: #1f6b4a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-submit:hover:not(:disabled) {
+  background: #185a3e;
+}
+
+.upload-secondary {
+  padding: 11px 18px;
+  color: #14352b;
+  background: white;
+  border: 1px solid #dfe5ea;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-submit:disabled,
+.upload-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Alerts */
+.upload-alert {
+  padding: 16px 18px;
+  border-radius: 12px;
+}
+
+.upload-alert-error {
+  background: #fff0ef;
+  border: 1px solid #f2c4bf;
+  color: #982f26;
+}
+
+.upload-alert-success {
+  background: #e9f7ef;
+  border: 1px solid #b7e2c8;
+  color: #18603f;
+}
+
+.upload-alert p {
+  margin: 8px 0 0;
+}
+
+.upload-alert pre {
+  margin: 10px 0 0;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.upload-note {
+  margin: 0;
+  font-size: 12px;
+  color: #7a8a99;
+}
+
+@media (max-width: 700px) {
+  .upload-body {
+    padding: 14px;
+  }
+
+  .upload-hero {
+    padding: 18px;
+  }
+
+  .upload-hero h2 {
+    font-size: 20px;
+  }
+
+  .upload-hero-stats {
+    gap: 18px;
+  }
+
+  .upload-field {
+    max-width: none;
+  }
+
+  .upload-submit,
+  .upload-secondary {
+    flex: 1;
+  }
+}

@@ -1,0 +1,273 @@
+/* =========================================
+   1. FONT IMPORTS & GLOBAL STYLES
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+    font-family: 'DM Sans', sans-serif;
+    color: #1e293b;
+    background: #f0fafc;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+/* =========================================
+   2. DASHBOARD PAGE & CONTENT WIDTH
+========================================= */
+.db-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px clamp(16px, 3vw, 44px) 48px;
+    background: #f0fafc;
+    color: #1e293b;
+}
+
+.db-page > .db-card,
+.db-page > .db-alert,
+.db-page > .db-chips,
+.db-page > .db-banner,
+.db-page > .db-period-bar,
+.db-page > .db-tabs,
+.db-page > .db-charts,
+.db-page > .db-empty {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   3. TOP BAR & BRANDING
+========================================= */
+.db-topbar {
+    max-width: 1600px;
+    margin: 0 auto 26px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 4px 0 22px;
+    border-bottom: 1px solid #d5edf2;
+}
+
+.db-brand-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: #0891b2;
+    color: #fff;
+    font: 800 23px Manrope, sans-serif;
+    box-shadow: 0 8px 18px #0891b225;
+}
+
+.db-brand-copy { flex: 1; }
+
+.db-brand-copy > span,
+.db-eyebrow {
+    display: block;
+    color: #0891b2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.45px;
+}
+
+.db-brand-copy h1 {
+    margin: 3px 0 2px;
+    font: 800 clamp(21px, 2.4vw, 29px) Manrope, sans-serif;
+    letter-spacing: -0.8px;
+    color: #0c3a47;
+}
+
+.db-brand-copy p { margin: 0; color: #6b8a96; font-size: 13px; }
+
+.db-live-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid #cdeaf1;
+    border-radius: 30px;
+    background: #fff;
+    color: #4f7381;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.db-live-tag i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #06b6d4;
+    box-shadow: 0 0 0 4px #06b6d41c;
+}
+
+/* =========================================
+   4. CARDS & CARD HEADINGS
+========================================= */
+.db-card {
+    background: #fff;
+    border: 1px solid #dcedf2;
+    border-radius: 17px;
+    padding: 20px 22px;
+    box-shadow: 0 3px 12px #0c3a4708;
+}
+
+.db-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+
+.db-card-head h2,
+.db-card-head h3 {
+    margin: 0;
+    color: #0c3a47;
+    font: 700 15px Manrope, sans-serif;
+    letter-spacing: -0.2px;
+}
+
+.db-card-head p { margin: 5px 0 0; color: #7893a0; font-size: 12px; line-height: 1.5; }
+.db-pill { flex: 0 0 auto; padding: 5px 9px; border-radius: 7px; background: #e6f6fa; color: #0e7490; font-size: 10px; font-weight: 700; }
+.db-muted { padding: 36px 10px; text-align: center; color: #95aab4; font-size: 12px; }
+
+/* =========================================
+   5. FARM & POND SELECTORS
+========================================= */
+.db-selects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+
+.db-selects label { display: flex; flex-direction: column; gap: 7px; color: #55737f; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+
+.db-selects select {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    border: 1px solid #d3e7ee;
+    border-radius: 10px;
+    background: #fafdfe;
+    color: #123a47;
+    font: 500 13px 'DM Sans', sans-serif;
+    outline: none;
+}
+
+.db-selects select:focus { border-color: #06b6d4; box-shadow: 0 0 0 3px #06b6d41f; }
+
+/* =========================================
+   6. RECORD COUNT CHIPS
+========================================= */
+.db-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; margin-bottom: 18px; }
+.db-chips span { padding: 7px 11px; border: 1px solid #d9ebf1; border-radius: 8px; background: #fff; color: #6b8a96; font-size: 11px; }
+.db-chips b { margin-left: 4px; color: #0e4a5c; font-weight: 700; }
+
+/* =========================================
+   7. SELECTED POND BANNER
+========================================= */
+.db-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 24px;
+    margin-top: 16px;
+    border-radius: 18px;
+    background: linear-gradient(112deg, #083344 0%, #0e7490 65%, #0891b2 100%);
+    color: #fff;
+    box-shadow: 0 10px 26px #0e749020;
+}
+
+.db-banner > div:first-child { min-width: 170px; }
+.db-banner small { display: block; color: #b5e8f2; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; }
+.db-banner h2 { margin: 5px 0; font: 800 25px Manrope, sans-serif; letter-spacing: -0.5px; }
+.db-banner p { margin: 0; color: #bfe9f3; font-size: 12px; }
+.db-banner-meta { display: grid; grid-template-columns: repeat(3, minmax(95px, 1fr)); gap: 18px 26px; flex: 1; max-width: 650px; }
+.db-banner-meta small { color: #a5e3f0; font-size: 9px; }
+.db-banner-meta b { display: block; margin-top: 5px; color: #fff; font-size: 12px; font-weight: 600; }
+
+/* =========================================
+   8. PERIOD FILTER
+========================================= */
+.db-period-bar { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 17px; padding: 17px 20px; border: 1px solid #d3e8ef; border-radius: 15px; background: #fff; box-shadow: 0 3px 12px #0c3a4706; }
+.db-period-copy { display: flex; flex-direction: column; gap: 4px; }
+.db-period-copy strong { font: 700 14px Manrope, sans-serif; color: #0c3a47; }
+.db-period-copy small { color: #7893a0; font-size: 11px; }
+.db-period-options { display: flex; gap: 7px; padding: 4px; border-radius: 12px; background: #e8f5f9; }
+
+.db-period-options button { min-width: 116px; padding: 9px 13px; border: 1px solid transparent; border-radius: 9px; background: transparent; color: #55737f; font: 600 12px 'DM Sans', sans-serif; cursor: pointer; transition: 0.18s ease; }
+.db-period-options button span { display: block; margin-top: 3px; color: #95aab4; font-size: 9px; font-weight: 500; }
+.db-period-options button:hover { background: #fff; color: #0e7490; }
+.db-period-options button.selected { background: #0e7490; color: #fff; box-shadow: 0 3px 8px #0e749025; }
+.db-period-options button.selected span { color: #c5eef6; }
+
+/* =========================================
+   9. TABS
+========================================= */
+.db-tabs { display: flex; gap: 5px; overflow-x: auto; margin: 24px 0 15px; padding: 5px; border: 1px solid #d9ebf1; border-radius: 12px; background: #fff; }
+.db-tab { flex: 0 0 auto; padding: 10px 16px; border: 0; border-radius: 8px; background: transparent; color: #6b8a96; font: 600 12px 'DM Sans', sans-serif; cursor: pointer; transition: 0.18s ease; }
+.db-tab:hover { background: #ecf7fa; color: #0e7490; }
+.db-tab.active { background: #0e7490; color: #fff; box-shadow: 0 3px 8px #0e749025; }
+
+/* =========================================
+   10. CHART GRID
+========================================= */
+.db-charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; max-width: 1600px; margin: 0 auto; }
+.db-charts .db-card { min-width: 0; padding: 19px 20px; overflow: hidden; }
+.db-charts .db-wide { grid-column: 1 / -1; }
+
+/* =========================================
+   11. ALERTS & EMPTY STATES
+========================================= */
+.db-alert { margin-bottom: 16px; padding: 15px 18px; border: 1px solid #f1d5b8; border-radius: 12px; background: #fff9f1; color: #89572a; font-size: 12px; }
+.db-alert strong { font-size: 13px; }
+.db-alert ul { margin: 8px 0; padding-left: 18px; }
+.db-alert small { color: #9c7955; }
+.db-empty { margin-top: 18px; text-align: center; }
+.db-empty p { color: #7893a0; font-size: 13px; }
+
+/* =========================================
+   12. EXPANDABLE CHART CARDS
+========================================= */
+.db-expand-hint { display: flex; justify-content: flex-end; padding-top: 6px; color: #8aa3ae; font-size: 10px; }
+.db-card[role="button"] { transition: transform 0.18s ease, box-shadow 0.18s ease; cursor: zoom-in; }
+.db-card[role="button"]:hover { transform: translateY(-2px); box-shadow: 0 10px 24px #0c3a4712; }
+.db-card[role="button"]:focus-visible { outline: 3px solid #06b6d450; outline-offset: 3px; }
+
+/* =========================================
+   13. EXPANDED CHART MODAL
+========================================= */
+.db-chart-modal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 24px; background: #072a36db; backdrop-filter: blur(5px); }
+.db-chart-modal-content { display: flex; flex-direction: column; gap: 16px; width: min(1120px, 96vw); height: min(720px, 90vh); padding: 25px; overflow: hidden; background: #fff; border: 1px solid #dcedf2; border-radius: 19px; box-shadow: 0 24px 80px #0004; }
+.db-chart-modal-header { display: flex; flex: 0 0 auto; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.db-chart-modal-header h2 { margin: 0; color: #0c3a47; font: 700 20px Manrope, sans-serif; }
+.db-chart-modal-header p { margin: 5px 0 0; color: #7893a0; font-size: 12px; }
+.db-chart-modal-plot { flex: 1 1 auto; min-height: 0; width: 100%; }
+.db-chart-close { display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 10px; background: #e6f4f8; color: #0e5a6d; font-size: 24px; cursor: pointer; }
+.db-chart-close:hover { background: #cdeaf1; }
+
+/* =========================================
+   14. TABLET RESPONSIVE LAYOUT
+========================================= */
+@media (max-width: 1100px) {
+    .db-banner { align-items: flex-start; flex-direction: column; }
+    .db-banner-meta { max-width: none; width: 100%; }
+}
+
+/* =========================================
+   15. MOBILE RESPONSIVE LAYOUT
+========================================= */
+@media (max-width: 720px) {
+    .db-page { padding: 16px 12px 32px; }
+    .db-live-tag { display: none; }
+    .db-selects { grid-template-columns: 1fr; }
+    .db-period-bar { align-items: stretch; flex-direction: column; }
+    .db-period-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .db-period-options button { min-width: 0; padding: 9px 5px; font-size: 10px; }
+    .db-charts { grid-template-columns: 1fr; }
+    .db-charts .db-wide { grid-column: auto; }
+    .db-banner-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .db-chart-modal { padding: 8px; }
+    .db-chart-modal-content { width: 100%; height: 86vh; padding: 15px; }
+}

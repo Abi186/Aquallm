@@ -1,0 +1,37 @@
+{
+    "selected_model": "random_forest",
+    "selected_model_display": "Random Forest",
+    "selection_method": "Lowest time-based holdout MAPE; lowest MAE used as tie-breaker.",
+    "selected_holdout_metrics": {
+        "rows": 587,
+        "mae_kg": 5.467,
+        "mape_pct": 7.06,
+        "bias_kg": -1.709
+    },
+    "selected_unseen_pond_metrics": {
+        "rows": 3000,
+        "mae_kg": 3.061,
+        "mape_pct": 6.88,
+        "bias_kg": -0.018
+    },
+    "reliable_days_within_10pct": 7,
+    "training_rows": 3000,
+    "pond_count": 30,
+    "date_from": "2026-01-02",
+    "date_to": "2026-05-01",
+    "features": [
+        "doc",
+        "avg_weight_g",
+        "biomass_kg",
+        "temperature_c",
+        "dissolved_oxygen",
+        "previous_feed_kg"
+    ],
+    "target": "feed_quantity_kg",
+    "trained_at": "2026-11-01T16:06:02",
+    "model_files": {
+        "random_forest": "random_forest_model.joblib",
+        "xgboost": "xgboost_model.joblib",
+        "selected_model": "feed_model.joblib"
+    }
+}
