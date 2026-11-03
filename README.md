@@ -1,6 +1,6 @@
 # AquaLLM
 
-## Confidence-Aware Aquaculture Intelligence Platform
+## AI-powered aquaculture intelligence platform
 
 AquaLLM is an AI-powered aquaculture intelligence platform that combines structured farm data, natural-language querying, and large language models to provide data-driven answers and insights.
 
